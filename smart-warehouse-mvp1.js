@@ -26,7 +26,7 @@
   function refrigerated(){ return app.records.filter(function(r){ return r.storage === 'Refrigerated'; }).length; }
   function frozen(){ return app.records.filter(function(r){ return r.storage === 'Frozen'; }).length; }
   function selected(){ return app.records.find(function(r){ return r.id === app.selectedId; }) || app.records[0] || app.useLog[0] || {volume:7,storage:'Refrigerated',age:'2days',stored:'Aug 16, 10:10',caution:true}; }
-  function randomScanRecord(){ if(!app.records.length) return null; return app.records[Math.floor(Math.random() * app.records.length)]; }
+  function randomScanRecord(){ if(!app.records.length) return null; var ok = app.records.filter(function(r){ return !r.caution; }); var notOk = app.records.filter(function(r){ return !!r.caution; }); var pool = (ok.length && notOk.length) ? (Math.random() < 0.55 ? ok : notOk) : (ok.length ? ok : notOk); return pool[Math.floor(Math.random() * pool.length)]; }
   function pumpAmount(){ return Math.max(0, Number(state && state.milkL || 0) + Number(state && state.milkR || 0)); }
   function syncPumpingHistory(){
     if(!state) return;
