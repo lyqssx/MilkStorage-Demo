@@ -1,0 +1,21 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Button Group 2">
+<path d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z" fill="white" style="mix-blend-mode:multiply"/>
+<g id="BG">
+<g id="Fill + Shadow">
+<path d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z" fill="white" fill-opacity="0.5"/>
+</g>
+<g id="Glass Effect">
+<path d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z" fill="black" fill-opacity="0.01"/>
+</g>
+</g>
+<g id="Symbol 2" style="mix-blend-mode:plus-darker">
+<g id="fridge">
+<path id="Vector" d="M23 12H21C18.1716 12 16.7574 12 15.8787 12.8787C15 13.7574 15 15.1716 15 18V26C15 28.8284 15 30.2426 15.8787 31.1213C16.7574 32 18.1716 32 21 32H23C25.8284 32 27.2426 32 28.1213 31.1213C29 30.2426 29 28.8284 29 26V18C29 15.1716 29 13.7574 28.1213 12.8787C27.2426 12 25.8284 12 23 12Z" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M15 21H29" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M19 28V25" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M19 17V16" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</svg>
