@@ -1363,3 +1363,294 @@
     transform-origin:top right!important;
   }
 }
+
+
+/* 20260828 take55: reduce mobile top gap and stabilize result sheets */
+@media (max-width:700px){
+  #demo .ms-storage{
+    --ms-top-space:calc(env(safe-area-inset-top, 0px) + 58px)!important;
+    --ms-bottom-space:calc(env(safe-area-inset-bottom, 0px) + 108px)!important;
+  }
+  #demo .ms-storage .ms-header{
+    top:calc(env(safe-area-inset-top, 0px) + 18px)!important;
+    height:32px!important;
+  }
+  #demo .ms-storage .ms-content{
+    padding-top:calc(var(--ms-top-space) + 34px)!important;
+  }
+
+  #demo .ms-scan-page .ms-scan-panel,
+  #demo .ms-result-page .ms-scan-panel{
+    height:calc(100% - env(safe-area-inset-top, 0px) - 255px)!important;
+    min-height:520px!important;
+    max-height:650px!important;
+    padding-top:36px!important;
+  }
+  #demo .ms-result-page.is-direct-result .ms-scan-panel,
+  #demo .ms-result-page.is-direct-result.has-secondary .ms-scan-panel{
+    height:calc(100% - env(safe-area-inset-top, 0px) - 255px)!important;
+    min-height:520px!important;
+    max-height:650px!important;
+  }
+  #demo .ms-result-page .ms-scan-panel header{
+    margin-bottom:30px!important;
+  }
+  #demo .ms-result-page .ms-direct-hint{
+    position:relative!important;
+    z-index:3!important;
+    width:calc(100% - 48px)!important;
+    max-width:360px!important;
+    margin:0 auto 18px!important;
+    text-align:center!important;
+  }
+  #demo .ms-result-page:not(.is-direct-result) .ms-direct-hint.is-scan-hint{
+    margin-top:18px!important;
+    margin-bottom:20px!important;
+  }
+  #demo .ms-result-page .ms-direct-hint strong{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    font-size:28px!important;
+    line-height:34px!important;
+    white-space:nowrap!important;
+  }
+  #demo .ms-result-page .ms-direct-hint p{
+    width:auto!important;
+    max-width:330px!important;
+    margin:6px auto 0!important;
+    font-size:14px!important;
+    line-height:18px!important;
+  }
+  #demo .ms-result-page.is-direct-result .ms-result-card,
+  #demo .ms-result-page:not(.is-direct-result) .ms-result-card{
+    position:absolute!important;
+    left:var(--ms-side)!important;
+    right:var(--ms-right)!important;
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 30px)!important;
+    width:auto!important;
+    max-width:none!important;
+    z-index:4!important;
+  }
+  #demo .ms-result-page.is-direct-result .ms-result-card{
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 64px)!important;
+  }
+  #demo .ms-result-page.is-direct-result.has-secondary .ms-result-card{
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 64px)!important;
+  }
+  #demo .ms-result-page:not(.is-direct-result) .ms-qr-frame.is-result{
+    width:min(210px, 52vw)!important;
+    height:min(210px, 52vw)!important;
+    margin:0 auto!important;
+  }
+  #demo .ms-result-page:not(.is-direct-result) .ms-qr-frame.is-result .ms-qr{
+    transform:scale(.88)!important;
+  }
+  #demo .ms-result-page .ms-result-main,
+  #demo .ms-result-page .ms-result-sub{
+    width:100%!important;
+  }
+}
+
+
+/* 20260828 take56: storage scroll viewport starts below the title bar */
+@media (max-width:700px){
+  #demo .ms-storage .ms-header{
+    z-index:60!important;
+    background:#fff!important;
+  }
+  #demo .ms-storage .ms-header::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    top:calc(-1 * (env(safe-area-inset-top, 0px) + 26px))!important;
+    right:-28px!important;
+    bottom:-18px!important;
+    left:-28px!important;
+    background:#fff!important;
+  }
+  #demo .ms-storage .ms-content{
+    top:calc(env(safe-area-inset-top, 0px) + 72px)!important;
+    bottom:0!important;
+    height:auto!important;
+    padding-top:26px!important;
+    padding-bottom:var(--ms-bottom-space)!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    clip-path:inset(0 0 0 0)!important;
+  }
+  #demo .ms-storage .ms-message{
+    margin-top:0!important;
+  }
+}
+
+
+/* 20260828 take57: keep Milk Storage scrolling strictly below the title */
+@media (max-width:700px){
+  #demo .ms-storage{
+    --ms-side:max(28px, calc(env(safe-area-inset-left, 0px) + 28px))!important;
+    --ms-right:max(28px, calc(env(safe-area-inset-right, 0px) + 28px))!important;
+    --ms-title-top:calc(env(safe-area-inset-top, 0px) + 32px)!important;
+    --ms-title-height:32px!important;
+    --ms-title-gap:18px!important;
+    --ms-content-top:calc(var(--ms-title-top) + var(--ms-title-height) + var(--ms-title-gap))!important;
+    --ms-bottom-space:calc(env(safe-area-inset-bottom, 0px) + 108px)!important;
+    overflow:hidden!important;
+    background:#fff!important;
+  }
+
+  #demo .ms-storage .ms-status{
+    display:none!important;
+  }
+
+  #demo .ms-storage .ms-header{
+    position:absolute!important;
+    top:var(--ms-title-top)!important;
+    left:var(--ms-side)!important;
+    right:var(--ms-right)!important;
+    width:auto!important;
+    height:var(--ms-title-height)!important;
+    z-index:80!important;
+    display:grid!important;
+    grid-template-columns:28px 1fr 28px!important;
+    align-items:center!important;
+    background:#fff!important;
+  }
+
+  #demo .ms-storage .ms-header::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    top:calc(-1 * (env(safe-area-inset-top, 0px) + 32px))!important;
+    right:calc(-1 * var(--ms-right))!important;
+    bottom:calc(-1 * var(--ms-title-gap))!important;
+    left:calc(-1 * var(--ms-side))!important;
+    background:#fff!important;
+    pointer-events:none!important;
+  }
+
+  #demo .ms-storage .ms-header h1{
+    margin:0!important;
+    font-size:18px!important;
+    line-height:24px!important;
+    font-weight:850!important;
+    letter-spacing:-.03em!important;
+  }
+
+  #demo .ms-storage .ms-content{
+    position:absolute!important;
+    top:var(--ms-content-top)!important;
+    right:0!important;
+    bottom:0!important;
+    left:0!important;
+    height:auto!important;
+    padding:0 var(--ms-right) var(--ms-bottom-space) var(--ms-side)!important;
+    margin:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior-y:contain!important;
+    scrollbar-width:none!important;
+    clip-path:none!important;
+  }
+
+  #demo .ms-storage .ms-content::-webkit-scrollbar,
+  #demo .ms-storage .ms-content *::-webkit-scrollbar{
+    width:0!important;
+    height:0!important;
+    display:none!important;
+  }
+
+  #demo .ms-storage .ms-message{
+    margin-top:0!important;
+  }
+}
+
+
+/* 20260828 take58: give Milk Storage a little more native-nav breathing room */
+@media (max-width:700px){
+  #demo .ms-storage{
+    --ms-title-top:calc(env(safe-area-inset-top, 0px) + 44px)!important;
+    --ms-title-gap:20px!important;
+    --ms-content-top:calc(var(--ms-title-top) + var(--ms-title-height) + var(--ms-title-gap))!important;
+  }
+}
+
+
+/* 20260828 take59: fine tune Milk Storage top safe area on iPhone */
+@media (max-width:700px){
+  #demo .ms-storage{
+    --ms-title-top:calc(env(safe-area-inset-top, 0px) + 52px)!important;
+    --ms-title-gap:20px!important;
+    --ms-content-top:calc(var(--ms-title-top) + var(--ms-title-height) + var(--ms-title-gap))!important;
+  }
+}
+
+
+/* 20260828 take60: restore full refrigerated/frozen proportion bar */
+@media (max-width:700px){
+  #demo .ms-storage .ms-summary{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:10px!important;
+    padding:9px 13px!important;
+  }
+
+  #demo .ms-storage .ms-ratio{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    flex:0 0 19px!important;
+    width:100%!important;
+    max-width:none!important;
+    height:19px!important;
+    display:flex!important;
+    align-items:stretch!important;
+    overflow:hidden!important;
+    border-radius:999px!important;
+    background:#7c7c7c!important;
+  }
+
+  #demo .ms-storage .ms-ratio i{
+    display:block!important;
+    height:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    border:0!important;
+  }
+
+  #demo .ms-storage .ms-ratio-cold{
+    flex:0 0 auto!important;
+    max-width:100%!important;
+    background:#d8d8d8!important;
+    border-radius:999px 0 0 999px!important;
+  }
+
+  #demo .ms-storage .ms-ratio-frozen{
+    flex:1 1 0!important;
+    width:auto!important;
+    background:#7c7c7c!important;
+    border-radius:0 999px 999px 0!important;
+  }
+
+  #demo .ms-storage .ms-legend{
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+}
+
+
+/* 20260828 take61: tiny extra top breathing room for native iPhone chrome */
+@media (max-width:700px){
+  #demo .ms-storage{
+    --ms-title-top:calc(env(safe-area-inset-top, 0px) + 58px)!important;
+    --ms-title-gap:20px!important;
+    --ms-content-top:calc(var(--ms-title-top) + var(--ms-title-height) + var(--ms-title-gap))!important;
+  }
+}
