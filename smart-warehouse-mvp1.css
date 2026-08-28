@@ -1175,3 +1175,191 @@
   object-fit:contain!important;
   background:transparent!important;
 }
+
+
+/* 20260828 take54: real-device responsive layout for Milk Storage */
+@media (max-width:700px){
+  #demo>.ms-screen{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  #demo .ms-storage{
+    --ms-side:max(28px, calc(env(safe-area-inset-left, 0px) + 28px));
+    --ms-right:max(28px, calc(env(safe-area-inset-right, 0px) + 28px));
+    --ms-top-space:calc(env(safe-area-inset-top, 0px) + 74px);
+    --ms-bottom-space:calc(env(safe-area-inset-bottom, 0px) + 108px);
+    background:#fff!important;
+  }
+
+  #demo .ms-storage .ms-header{
+    top:calc(env(safe-area-inset-top, 0px) + 48px)!important;
+    left:var(--ms-side)!important;
+    right:var(--ms-right)!important;
+    width:auto!important;
+    height:32px!important;
+    grid-template-columns:28px 1fr 28px!important;
+    align-items:center!important;
+  }
+  #demo .ms-storage .ms-header h1{
+    font-size:18px!important;
+    line-height:24px!important;
+    font-weight:850!important;
+    letter-spacing:-.03em!important;
+  }
+  #demo .ms-storage .ms-header .ms-icon,
+  #demo .ms-storage .ms-header .ms-icon .ms-img{
+    width:28px!important;
+    height:28px!important;
+  }
+
+  #demo .ms-storage .ms-content{
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    left:0!important;
+    height:auto!important;
+    padding:calc(var(--ms-top-space) + 36px) var(--ms-right) var(--ms-bottom-space) var(--ms-side)!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior-y:contain!important;
+    scrollbar-width:none!important;
+  }
+  #demo .ms-storage .ms-content::-webkit-scrollbar,
+  #demo .ms-storage .ms-content *::-webkit-scrollbar{
+    width:0!important;
+    height:0!important;
+    display:none!important;
+  }
+
+  #demo .ms-storage .ms-message,
+  #demo .ms-storage .ms-summary,
+  #demo .ms-storage .ms-pending-entry,
+  #demo .ms-storage .ms-log,
+  #demo .ms-storage .ms-tabs,
+  #demo .ms-storage .ms-add,
+  #demo .ms-storage .ms-tab-body,
+  #demo .ms-storage .ms-log-row,
+  #demo .ms-storage .ms-empty{
+    width:100%!important;
+    max-width:none!important;
+  }
+
+  #demo .ms-storage .ms-message{
+    height:auto!important;
+    min-height:38px!important;
+    margin:0 0 20px!important;
+    font-size:16px!important;
+    line-height:20px!important;
+  }
+  #demo .ms-storage .ms-summary{
+    height:130px!important;
+  }
+  #demo .ms-storage .ms-numbers{
+    width:100%!important;
+    grid-template-columns:1fr 1px 1fr!important;
+  }
+  #demo .ms-storage .ms-ratio{
+    left:13px!important;
+    right:13px!important;
+    width:auto!important;
+  }
+  #demo .ms-storage .ms-legend{
+    left:13px!important;
+    right:13px!important;
+    width:auto!important;
+  }
+
+  #demo .ms-storage .ms-log{
+    margin-top:20px!important;
+    padding-bottom:0!important;
+    overflow:visible!important;
+  }
+  #demo .ms-storage .ms-tabs{
+    height:58px!important;
+  }
+  #demo .ms-storage .ms-tab-body{
+    overflow:visible!important;
+    padding-bottom:0!important;
+  }
+  #demo .ms-storage .ms-log-row{
+    height:68px!important;
+  }
+
+  #demo .ms-storage .ms-bottom-cta{
+    position:absolute!important;
+    left:var(--ms-side)!important;
+    right:var(--ms-right)!important;
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 28px)!important;
+    width:auto!important;
+    height:58px!important;
+    z-index:40!important;
+  }
+  #demo .ms-storage .ms-back-top{
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 98px)!important;
+  }
+
+  #demo .ms-scan-page,
+  #demo .ms-result-page{
+    --ms-side:max(28px, calc(env(safe-area-inset-left, 0px) + 28px));
+    --ms-right:max(28px, calc(env(safe-area-inset-right, 0px) + 28px));
+    background:#868686!important;
+  }
+  #demo .ms-scan-page .ms-backdrop,
+  #demo .ms-result-page .ms-backdrop{
+    inset:0!important;
+  }
+  #demo .ms-scan-page .ms-scan-panel,
+  #demo .ms-result-page .ms-scan-panel{
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    height:min(74vh, calc(100% - env(safe-area-inset-top, 0px) - 138px))!important;
+    min-height:560px!important;
+    max-height:720px!important;
+    padding:40px var(--ms-right) calc(env(safe-area-inset-bottom, 0px) + 24px) var(--ms-side)!important;
+    border-radius:31px 31px 0 0!important;
+    overflow:hidden!important;
+  }
+  #demo .ms-scan-panel header{
+    height:32px!important;
+    grid-template-columns:28px 1fr 28px!important;
+    margin-bottom:34px!important;
+  }
+  #demo .ms-scan-panel header h1{
+    font-size:18px!important;
+    line-height:24px!important;
+  }
+  #demo .ms-scan-panel .ms-icon,
+  #demo .ms-scan-panel .ms-icon .ms-img,
+  #demo .ms-scan-panel .ms-search{
+    width:28px!important;
+    height:28px!important;
+  }
+  #demo .ms-scan-page .ms-scan-card,
+  #demo .ms-result-page .ms-result-card{
+    left:var(--ms-side)!important;
+    right:var(--ms-right)!important;
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 30px)!important;
+    width:auto!important;
+  }
+  #demo .ms-result-page.has-secondary .ms-confirm,
+  #demo .ms-result-page.has-secondary .ms-secondary-confirm,
+  #demo .ms-result-page .ms-outline,
+  #demo .ms-scan-card.failed button{
+    width:100%!important;
+  }
+
+  #demo .ms-trigger{
+    right:10px!important;
+    top:calc(env(safe-area-inset-top, 0px) + 138px)!important;
+    transform:scale(.88)!important;
+    transform-origin:top right!important;
+  }
+}
