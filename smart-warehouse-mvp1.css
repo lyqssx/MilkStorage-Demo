@@ -1883,3 +1883,608 @@
     margin-top:7px!important;
   }
 }
+
+
+/* 20260831 take66: manual Milk Storage add flow */
+.ms-add-overlay{
+  position:absolute!important;
+  inset:0!important;
+  z-index:120!important;
+  display:block!important;
+  color:#111!important;
+}
+.ms-add-backdrop{
+  position:absolute!important;
+  inset:0!important;
+  border:0!important;
+  background:rgba(0,0,0,.22)!important;
+  backdrop-filter:blur(14px)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+}
+.ms-add-sheet{
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  min-height:560px!important;
+  border-radius:31px 31px 0 0!important;
+  background:#303030!important;
+  color:#fff!important;
+  padding:30px 28px calc(env(safe-area-inset-bottom, 0px) + 28px)!important;
+  box-shadow:0 -18px 46px rgba(0,0,0,.24)!important;
+}
+.ms-add-sheet header{
+  position:relative!important;
+  text-align:center!important;
+  margin:0 0 24px!important;
+}
+.ms-add-sheet header button{
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:30px!important;
+  height:30px!important;
+  border:0!important;
+  border-radius:15px!important;
+  background:rgba(255,255,255,.1)!important;
+  color:#fff!important;
+  font-size:22px!important;
+  line-height:28px!important;
+  font-weight:500!important;
+}
+.ms-add-sheet header p{
+  margin:0 0 5px!important;
+  color:rgba(255,255,255,.48)!important;
+  font-size:13px!important;
+  line-height:17px!important;
+  font-weight:700!important;
+}
+.ms-add-sheet header h2{
+  margin:0!important;
+  color:#fff!important;
+  font-size:24px!important;
+  line-height:30px!important;
+  font-weight:850!important;
+  letter-spacing:-.03em!important;
+}
+.ms-add-scan-frame{
+  position:relative!important;
+  width:210px!important;
+  height:210px!important;
+  margin:10px auto 24px!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  border-radius:22px!important;
+  background:linear-gradient(135deg,#eef2ef,#d6dedc)!important;
+}
+.ms-add-copy{
+  width:292px!important;
+  max-width:100%!important;
+  margin:0 auto 24px!important;
+  color:rgba(255,255,255,.68)!important;
+  font-size:16px!important;
+  line-height:21px!important;
+  font-weight:500!important;
+  text-align:center!important;
+}
+.ms-add-scan-btn,
+.ms-add-save{
+  display:grid!important;
+  place-items:center!important;
+  width:100%!important;
+  height:58px!important;
+  border:0!important;
+  border-radius:29px!important;
+  background:#fff!important;
+  color:#303030!important;
+  font-size:16px!important;
+  line-height:20px!important;
+  font-weight:850!important;
+}
+.ms-add-linked{
+  height:54px!important;
+  margin:0 0 16px!important;
+  padding:9px 14px!important;
+  border-radius:18px!important;
+  background:rgba(255,255,255,.1)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+}
+.ms-add-linked span{
+  color:rgba(255,255,255,.54)!important;
+  font-size:14px!important;
+  font-weight:700!important;
+}
+.ms-add-linked b{
+  color:#fff!important;
+  font-size:17px!important;
+  font-weight:850!important;
+}
+.ms-add-field{
+  position:relative!important;
+  display:block!important;
+  margin:0 0 12px!important;
+  padding:12px 16px 10px!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  color:#111!important;
+}
+.ms-add-field span{
+  display:block!important;
+  margin:0 0 5px!important;
+  color:#858585!important;
+  font-size:12px!important;
+  line-height:16px!important;
+  font-weight:700!important;
+}
+.ms-add-field input{
+  width:100%!important;
+  height:30px!important;
+  border:0!important;
+  outline:0!important;
+  padding:0!important;
+  background:transparent!important;
+  color:#111!important;
+  font:800 24px/30px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif!important;
+}
+.ms-add-field em{
+  position:absolute!important;
+  right:16px!important;
+  bottom:12px!important;
+  color:#858585!important;
+  font-style:normal!important;
+  font-size:16px!important;
+  font-weight:750!important;
+}
+.ms-add-storage{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:10px!important;
+  margin:16px 0 12px!important;
+}
+.ms-add-storage button{
+  height:52px!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  border-radius:26px!important;
+  background:transparent!important;
+  color:rgba(255,255,255,.78)!important;
+  font-size:15px!important;
+  font-weight:850!important;
+}
+.ms-add-storage button.active{
+  border-color:#fff!important;
+  background:#fff!important;
+  color:#303030!important;
+}
+.ms-add-trigger{
+  position:fixed!important;
+  right:10px!important;
+  top:calc(env(safe-area-inset-top, 0px) + 138px)!important;
+  z-index:140!important;
+  width:138px!important;
+  border-radius:18px!important;
+  background:rgba(20,20,20,.9)!important;
+  padding:10px!important;
+  color:#fff!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.24)!important;
+}
+.ms-add-trigger b{
+  display:block!important;
+  font-size:12px!important;
+  margin:1px 3px 7px!important;
+}
+.ms-add-trigger button{
+  width:100%!important;
+  height:36px!important;
+  border:0!important;
+  border-radius:12px!important;
+  background:rgba(255,255,255,.14)!important;
+  color:#fff!important;
+  font-weight:850!important;
+  font-size:12px!important;
+}
+@media(max-width:700px){
+  #demo .ms-add-sheet{
+    padding-left:var(--ms-side, 28px)!important;
+    padding-right:var(--ms-right, 28px)!important;
+  }
+}
+
+
+/* 20260831 take67: softer Pumped time row + picker for manual storage */
+.ms-add-pumped{
+  width:100%!important;
+  height:66px!important;
+  margin:0 0 12px!important;
+  padding:12px 16px!important;
+  border:0!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  color:#111!important;
+  text-align:left!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+}
+.ms-add-pumped strong{
+  display:block!important;
+  color:#111!important;
+  font-size:14px!important;
+  line-height:18px!important;
+  font-weight:850!important;
+}
+.ms-add-pumped span{
+  color:#858585!important;
+  font-size:18px!important;
+  line-height:22px!important;
+  font-weight:750!important;
+}
+.ms-add-storage{
+  margin-top:16px!important;
+  margin-bottom:0!important;
+}
+.ms-date-picker{
+  position:absolute!important;
+  z-index:160!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  min-height:420px!important;
+  padding:10px 24px calc(env(safe-area-inset-bottom, 0px) + 22px)!important;
+  border-radius:34px 34px 0 0!important;
+  background:rgba(250,250,252,.98)!important;
+  color:#303030!important;
+  box-shadow:0 -20px 50px rgba(0,0,0,.18)!important;
+}
+.ms-date-picker>i{
+  display:block!important;
+  width:36px!important;
+  height:5px!important;
+  margin:0 auto 22px!important;
+  border-radius:999px!important;
+  background:#c8c8cb!important;
+}
+.ms-date-close{
+  position:absolute!important;
+  top:28px!important;
+  left:28px!important;
+  width:48px!important;
+  height:48px!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  color:#111!important;
+  font-size:34px!important;
+  line-height:44px!important;
+  font-weight:300!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.06)!important;
+}
+.ms-date-picker h2{
+  margin:0 0 54px!important;
+  text-align:center!important;
+  color:#5c5c5f!important;
+  font-size:22px!important;
+  line-height:28px!important;
+  font-weight:850!important;
+}
+.ms-date-wheel{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:1.2fr .8fr .8fr!important;
+  gap:0!important;
+  width:100%!important;
+  max-width:330px!important;
+  margin:0 auto 64px!important;
+  text-align:center!important;
+}
+.ms-date-wheel:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  top:50%!important;
+  height:44px!important;
+  transform:translateY(-50%)!important;
+  border:1px solid rgba(0,0,0,.1)!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.38)!important;
+}
+.ms-date-wheel span,
+.ms-date-wheel strong{
+  position:relative!important;
+  z-index:1!important;
+  height:32px!important;
+  color:rgba(48,48,48,.36)!important;
+  font-size:22px!important;
+  line-height:32px!important;
+  font-weight:500!important;
+}
+.ms-date-wheel strong{
+  color:#303030!important;
+  font-weight:500!important;
+}
+.ms-date-save{
+  display:grid!important;
+  place-items:center!important;
+  width:100%!important;
+  max-width:344px!important;
+  height:58px!important;
+  margin:0 auto!important;
+  border:0!important;
+  border-radius:29px!important;
+  background:#303030!important;
+  color:#fff!important;
+  font-size:18px!important;
+  line-height:22px!important;
+  font-weight:850!important;
+}
+@media(max-width:700px){
+  #demo .ms-date-picker{
+    padding-left:var(--ms-side, 28px)!important;
+    padding-right:var(--ms-right, 28px)!important;
+  }
+}
+
+
+/* 20260831 take68: Figma chevron icon and direct add scanning */
+.ms-date-chevron{
+  display:inline-block!important;
+  width:18px!important;
+  height:18px!important;
+  margin-left:4px!important;
+  vertical-align:-2px!important;
+  object-fit:contain!important;
+  background:transparent!important;
+}
+
+
+/* 20260831 take69: use Figma close icon asset */
+.ms-close-figma-btn{
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  padding:0!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+.ms-close-figma-btn img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  background:transparent!important;
+}
+.ms-add-sheet header .ms-close-figma-btn{
+  width:48px!important;
+  height:48px!important;
+  border-radius:50%!important;
+  background:transparent!important;
+}
+.ms-date-close.ms-close-figma-btn{
+  width:56px!important;
+  height:56px!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+
+/* 20260831 take70: close icon sizing + mobile volume input */
+.ms-add-sheet header .ms-close-figma-btn{
+  left:0!important;
+  top:-2px!important;
+  width:56px!important;
+  height:56px!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.ms-add-sheet header .ms-close-figma-btn img{
+  width:56px!important;
+  height:56px!important;
+}
+.ms-date-close.ms-close-figma-btn{
+  left:24px!important;
+  top:24px!important;
+  width:56px!important;
+  height:56px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.ms-date-close.ms-close-figma-btn img{
+  width:56px!important;
+  height:56px!important;
+}
+.ms-add-field{
+  overflow:hidden!important;
+}
+.ms-add-field input.ms-add-volume{
+  -webkit-appearance:none!important;
+  appearance:textfield!important;
+  padding-right:54px!important;
+}
+.ms-add-field input.ms-add-volume::-webkit-outer-spin-button,
+.ms-add-field input.ms-add-volume::-webkit-inner-spin-button{
+  -webkit-appearance:none!important;
+  margin:0!important;
+  display:none!important;
+}
+.ms-add-field em{
+  right:16px!important;
+  bottom:20px!important;
+  z-index:2!important;
+  min-width:32px!important;
+  text-align:right!important;
+  background:#fff!important;
+}
+
+
+/* 20260831 take71: match mobile sheet close icon visual size + no desktop volume controls */
+.ms-add-sheet header .ms-close-figma-btn,
+.ms-date-close.ms-close-figma-btn{
+  width:56px!important;
+  height:56px!important;
+  overflow:visible!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.ms-add-sheet header .ms-close-figma-btn{
+  left:-6px!important;
+  top:-8px!important;
+}
+.ms-date-close.ms-close-figma-btn{
+  left:18px!important;
+  top:18px!important;
+}
+.ms-add-sheet header .ms-close-figma-btn img,
+.ms-date-close.ms-close-figma-btn img{
+  width:104px!important;
+  height:104px!important;
+  max-width:none!important;
+  max-height:none!important;
+  flex:0 0 auto!important;
+  object-fit:contain!important;
+  pointer-events:none!important;
+}
+.ms-add-field{
+  min-height:68px!important;
+  padding-right:18px!important;
+}
+.ms-add-field input.ms-add-volume{
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:34px!important;
+  padding-right:70px!important;
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  border-radius:0!important;
+}
+.ms-add-field input.ms-add-volume[type=number]{
+  -moz-appearance:textfield!important;
+}
+.ms-add-field input.ms-add-volume::-webkit-outer-spin-button,
+.ms-add-field input.ms-add-volume::-webkit-inner-spin-button{
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  display:none!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  width:0!important;
+  margin:0!important;
+}
+.ms-add-field em{
+  right:18px!important;
+  bottom:15px!important;
+  width:42px!important;
+  min-width:42px!important;
+  height:28px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  background:#fff!important;
+  pointer-events:none!important;
+}
+
+
+/* 20260831 take72: real scrollable pumped picker + manual scan failure state */
+.ms-add-scan-frame.is-failed{ background:linear-gradient(135deg,#f2f2f2,#dedede)!important; }
+.ms-add-scan-btn.is-loading{ opacity:.92!important; pointer-events:none!important; gap:10px!important; }
+.ms-add-scan-btn.is-loading span{ width:16px!important; height:16px!important; border-radius:50%!important; border:2px solid rgba(48,48,48,.22)!important; border-top-color:#303030!important; animation:msSpin .8s linear infinite!important; }
+@keyframes msSpin{ to{ transform:rotate(360deg); } }
+.ms-add-trigger{ display:grid!important; gap:8px!important; }
+.ms-add-trigger button + button{ margin-top:0!important; background:rgba(255,255,255,.09)!important; }
+.ms-date-picker{ min-height:520px!important; padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 24px)!important; }
+.ms-date-picker h2{ margin-bottom:4px!important; }
+.ms-date-year{ margin:0 0 20px!important; text-align:center!important; color:rgba(48,48,48,.42)!important; font-size:15px!important; line-height:20px!important; font-weight:800!important; }
+.ms-date-wheel.is-scrollable{ display:grid!important; grid-template-columns:1fr .72fr .72fr .72fr!important; gap:8px!important; max-width:344px!important; height:198px!important; margin:0 auto 42px!important; overflow:visible!important; }
+.ms-date-wheel.is-scrollable:before{ top:50%!important; height:46px!important; z-index:0!important; }
+.ms-date-col{ position:relative!important; z-index:1!important; height:198px!important; overflow-y:auto!important; -webkit-overflow-scrolling:touch!important; scroll-snap-type:y proximity!important; padding:76px 0!important; scrollbar-width:none!important; }
+.ms-date-col::-webkit-scrollbar{ width:0!important; height:0!important; display:none!important; }
+.ms-date-col button{ display:block!important; width:100%!important; height:46px!important; padding:0!important; border:0!important; background:transparent!important; color:rgba(48,48,48,.34)!important; font-size:25px!important; line-height:46px!important; font-weight:500!important; text-align:center!important; scroll-snap-align:center!important; }
+.ms-date-col button.active{ color:#303030!important; font-weight:650!important; }
+.ms-date-wheel.is-scrollable span,.ms-date-wheel.is-scrollable strong{ height:auto!important; }
+
+
+/* 20260831 take74: use Figma chevron asset on Home milk storage card */
+.ms-home-storage-card .ms-home-card-chevron{
+  width:34px!important;
+  height:34px!important;
+  flex:0 0 34px!important;
+  display:block!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:brightness(0) invert(1) opacity(.78)!important;
+}
+.ms-home-storage-card i{
+  display:none!important;
+}
+
+
+/* 20260831 take75: home card chevron normal size and title alignment */
+.ms-home-storage-card{
+  position:relative!important;
+  align-items:flex-start!important;
+  padding:21px 56px 20px 24px!important;
+}
+.ms-home-storage-card b{
+  margin-top:-3px!important;
+}
+.ms-home-storage-card .ms-home-card-chevron{
+  position:absolute!important;
+  right:24px!important;
+  top:26px!important;
+  width:24px!important;
+  height:24px!important;
+  flex:0 0 24px!important;
+  display:block!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:brightness(0) invert(1) opacity(.78)!important;
+}
+
+
+/* 20260831 take76: shrink Home card chevron to normal icon scale */
+.ms-home-storage-card .ms-home-card-chevron{
+  right:28px!important;
+  top:30px!important;
+  width:16px!important;
+  height:16px!important;
+  flex:0 0 16px!important;
+}
+
+
+/* 20260831 take77: use Figma add icon asset in Milk Storage */
+.ms-icon .ms-img[src$="ms-add-figma-52-991.svg"],
+.ms-add-img[src$="ms-add-figma-52-991.svg"]{
+  background:transparent!important;
+  object-fit:contain!important;
+}
+.ms-header .ms-icon .ms-img[src$="ms-add-figma-52-991.svg"]{
+  width:24px!important;
+  height:24px!important;
+}
+.ms-add .ms-add-img[src$="ms-add-figma-52-991.svg"]{
+  width:24px!important;
+  height:24px!important;
+}
+
+
+/* 20260831 take79: top-right Milk Storage action uses actual add icon */
+.ms-storage .ms-header .ms-top-add .ms-img{
+  width:24px!important;
+  height:24px!important;
+  display:block!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:none!important;
+}
+.ms-storage .ms-header .ms-top-add{
+  cursor:pointer!important;
+}

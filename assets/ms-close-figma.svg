@@ -1,0 +1,38 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Button">
+<g id="BG">
+<g id="Blur" opacity="0.67">
+<mask id="mask0_24_36" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-50" y="-50" width="196" height="196">
+<g id="Mask">
+<rect width="196" height="196" transform="translate(-50 -50)" fill="white"/>
+<rect id="Shape" x="26" y="26" width="44" height="44" rx="22" fill="black"/>
+</g>
+</mask>
+<g mask="url(#mask0_24_36)">
+</g>
+<foreignObject x="-16" y="-16" width="128" height="128"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(20px);clip-path:url(#bgblur_0_24_36_clip_path);height:100%;width:100%"></div></foreignObject><g id="Blur_2" filter="url(#filter0_f_24_36)" data-figma-bg-blur-radius="40">
+<path d="M24 48C24 34.7452 34.7452 24 48 24C61.2548 24 72 34.7452 72 48C72 61.2548 61.2548 72 48 72C34.7452 72 24 61.2548 24 48Z" fill="black" fill-opacity="0.04" style="mix-blend-mode:hard-light"/>
+</g>
+</g>
+<g id="Fill">
+<path d="M26 48C26 35.8497 35.8497 26 48 26C60.1503 26 70 35.8497 70 48C70 60.1503 60.1503 70 48 70C35.8497 70 26 60.1503 26 48Z" fill="white" fill-opacity="0.5"/>
+</g>
+<g id="Glass Effect">
+<path d="M26 48C26 35.8497 35.8497 26 48 26C60.1503 26 70 35.8497 70 48C70 60.1503 60.1503 70 48 70C35.8497 70 26 60.1503 26 48Z" fill="black" fill-opacity="0.01"/>
+</g>
+</g>
+<g id="Text">
+<g id="Icon / Close" style="mix-blend-mode:plus-darker">
+<path id="Vector" d="M41 41L55 55M55 41L41 55" stroke="#1B1821" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_24_36" x="-16" y="-16" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_24_36"/>
+</filter>
+<clipPath id="bgblur_0_24_36_clip_path" transform="translate(16 16)"><path d="M24 48C24 34.7452 34.7452 24 48 24C61.2548 24 72 34.7452 72 48C72 61.2548 61.2548 72 48 72C34.7452 72 24 61.2548 24 48Z"/>
+</clipPath></defs>
+</svg>
